@@ -3,7 +3,7 @@
 
 A deep learning-based web application to classify German traffic signs using a trained ResNet18 model. The app allows users to upload an image, preview it, and predict the traffic sign class.
 
-## 📸 Live Preview Feature
+## 📸 One click recognition
 - **Upload an image**
 - **Instantly preview the uploaded image**
 - **Classifies the traffic sign** and shows the predicted class name.
