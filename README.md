@@ -24,7 +24,7 @@ To run the app locally, follow these steps:
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/traffic-sign-classifier.git
+git clone  https://github.com/Sam-Begin-tech/traffic-sign-classifier.git
 cd traffic-sign-classifier
 ```
 
@@ -58,17 +58,13 @@ pip install -r requirements.txt
 
 Make sure the dataset files (`Train.csv`, `Test.csv`, and images) are available in the `archive/` directory.
 
-You can find the **GTSRB - German Traffic Sign Recognition** dataset at [this link](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
+You can find the **GTSRB - German Traffic Sign Recognition** dataset at [this link](https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign/data).
 
 After downloading the dataset, make sure the directory structure looks like this:
 
 ```
 traffic-sign-classifier/
 │
-├── archive/
-│    ├── Train.csv
-│    ├── Test.csv
-│    ├── Images/  # All image files for training and testing
 │
 ├── app.py        # Flask backend code
 ├── templates/
