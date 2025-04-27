@@ -4,6 +4,5 @@ venv/
 myenv/
 .env
 archive/
-model/
 *.pth
     
