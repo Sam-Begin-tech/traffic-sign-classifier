@@ -19,7 +19,7 @@ A deep learning-based web application to classify German traffic signs using a t
 
 ### Preview Image
 
-![Traffic Sign Classifier Preview](previews/img1.png)
+![Traffic Sign Classifier Preview](static/previews/img1.png)
 
 
 
