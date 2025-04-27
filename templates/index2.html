@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🚦 Traffic Sign Recognition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="main-container">
+  <h1>🚦 Traffic Vision 🚧</h1>
+
+  <form id="upload-form" enctype="multipart/form-data">
+    <div class="upload-section">
+      <label for="file-input" class="custom-file-upload">
+        📤 Choose an Image
+      </label>
+      <input type="file" name="file" id="file-input" accept="image/*" required>
+    </div>
+
+    <button type="submit" id="predict-button">Predict 🚀</button>
+  </form>
+
+  <div id="loading" style="display: none;">
+    <div class="spinner"></div>
+    <p>Predicting...</p>
+  </div>
+
+  <div id="preview-container">
+    <img id="uploaded-image" src="" alt="Uploaded Image" style="display:none; max-width: 100%; height: auto;">
+  </div>
+
+  <h2 id="prediction-text"></h2>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+  // Image Preview
+  $('#file-input').on('change', function(event){
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        $('#uploaded-image').attr('src', e.target.result).fadeIn();
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+
+  $('#upload-form').on('submit', function(e){
+    e.preventDefault();
+
+    var formData = new FormData(this);
+
+    $("#loading").show();
+    $("#prediction-text").text('');
+
+    $.ajax({
+      url: '/predict',
+      type: 'POST',
+      data: formData,
+      success: function(response){
+        $("#loading").hide();
+        $('#uploaded-image').attr('src', response.file_path);
+        $('#prediction-text').text('Prediction: ' + response.class_name);
+      },
+      cache: false,
+      contentType: false,
+      processData: false
+    });
+  });
+});
+</script>
+
+</body>
+</html>
