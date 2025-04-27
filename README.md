@@ -15,6 +15,14 @@ A deep learning-based web application to classify German traffic signs using a t
 - **Frontend**: HTML, CSS (Bootstrap), JavaScript (AJAX for better user experience)
 - **Image Processing**: Pillow, TorchVision
 
+
+
+### Preview Image
+
+![Traffic Sign Classifier Preview](previews/img1.png)
+
+
+
 ## 📝 How to Run Locally
 
 To run the app locally, follow these steps:
